@@ -1,0 +1,7 @@
+1. RedisTemplate配置中的RedisConnectFactory是什么，有什么作用，原理是什么，为啥一开始需要setConnect，最后又需要afterFactory
+2. jwt的generateToken方法和parseToken方法的逻辑链路，为什么这样写，每一个逻辑调用的原因与作用
+3. value序列化的流程，为啥要先创建ObjectMapper，然后对om进行一系列操作，om起到什么作用，对om这些操作的参数又是什么作用，什么意思，再创建Jackson2JsonRedisSerializer<Object>，其中Jackson2JsonRedisSerializer<>(om, Object.class);这里的参数又是起到什么作用，为啥要这样写参数
+4. 双token身份校验
+5. 利用全局处理器解决异常处理问题
+6. 学习java异常体系，搞懂异常上下层结构以及每个异常的特点与作用
+7. 为啥BusinessException自定义异常一般是继承自RuntimeException
