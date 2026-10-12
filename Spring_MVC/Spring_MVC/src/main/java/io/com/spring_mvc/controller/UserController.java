@@ -1,5 +1,6 @@
 package io.com.spring_mvc.controller;
 
+import io.com.spring_mvc.common.annotation.CurrentUser;
 import io.com.spring_mvc.query.UserLoginQuery;
 import io.com.spring_mvc.service.UserService;
 import io.com.spring_mvc.util.Result;
@@ -21,7 +22,7 @@ public class UserController {
     }
 
     @GetMapping("/id")
-    public Result<UserVO> query(@RequestParam Long id) {
+    public Result<UserVO> query(@CurrentUser Long id) {
         UserVO userVO = userService.queryById(id);
         return Result.success(userVO);
     }

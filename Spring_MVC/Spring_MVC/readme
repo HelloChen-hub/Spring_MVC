@@ -5,3 +5,4 @@
 5. 利用全局处理器解决异常处理问题
 6. 学习java异常体系，搞懂异常上下层结构以及每个异常的特点与作用
 7. 为啥BusinessException自定义异常一般是继承自RuntimeException
+7. RESTful风格api到底是啥意思

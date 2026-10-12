@@ -23,4 +23,12 @@ public class UserContext {
         ROLE_HOLDER.remove();
     }
 
+    public static Long getUserId() {
+        return USER_ID_HOLDER.get();
+    }
+
+    public static String getUserRole() {
+        return ROLE_HOLDER.get();
+    }
+
 }
