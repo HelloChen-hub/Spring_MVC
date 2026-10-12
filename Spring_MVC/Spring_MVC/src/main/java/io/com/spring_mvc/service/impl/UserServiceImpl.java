@@ -4,6 +4,7 @@ import cn.hutool.core.bean.BeanUtil;
 import com.baomidou.mybatisplus.extension.repository.AbstractRepository;
 import com.baomidou.mybatisplus.spring.service.impl.ServiceImpl;
 import io.com.spring_mvc.common.RedisPrefix;
+import io.com.spring_mvc.dto.UserDTO;
 import io.com.spring_mvc.entity.User;
 import io.com.spring_mvc.exception.BusinessException;
 import io.com.spring_mvc.mapper.UserMapper;
@@ -83,5 +84,13 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
         }
 
         return BeanUtil.copyProperties(user, UserVO.class);
+    }
+
+    @Override
+    public void addUser(UserDTO userDTO) {
+
+        // 将userDTO复制到user中
+        User user = BeanUtil.copyProperties(userDTO, User.class);
+        save(user);
     }
 }

@@ -1,11 +1,13 @@
 package io.com.spring_mvc.controller;
 
 import io.com.spring_mvc.common.annotation.CurrentUser;
+import io.com.spring_mvc.dto.UserDTO;
 import io.com.spring_mvc.query.UserLoginQuery;
 import io.com.spring_mvc.service.UserService;
 import io.com.spring_mvc.util.Result;
 import io.com.spring_mvc.vo.UserVO;
 import jakarta.annotation.Resource;
+import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -25,5 +27,11 @@ public class UserController {
     public Result<UserVO> query(@CurrentUser Long id) {
         UserVO userVO = userService.queryById(id);
         return Result.success(userVO);
+    }
+
+    @PostMapping
+    public Result<Void> addUser(@Valid @RequestBody UserDTO userDTO) {
+        userService.addUser(userDTO);
+        return Result.success();
     }
 }
