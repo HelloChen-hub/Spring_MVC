@@ -7,7 +7,7 @@ import io.com.spring_mvc.service.UserService;
 import io.com.spring_mvc.util.Result;
 import io.com.spring_mvc.vo.UserVO;
 import jakarta.annotation.Resource;
-import jakarta.validation.Valid;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -30,7 +30,7 @@ public class UserController {
     }
 
     @PostMapping
-    public Result<Void> addUser(@Valid @RequestBody UserDTO userDTO) {
+    public Result<Void> addUser(@Validated @RequestBody UserDTO userDTO) {
         userService.addUser(userDTO);
         return Result.success();
     }

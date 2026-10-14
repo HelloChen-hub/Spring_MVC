@@ -1,5 +1,7 @@
 package io.com.spring_mvc.dto;
 
+import io.com.spring_mvc.common.RoleEnum;
+import io.com.spring_mvc.common.annotation.EnumValue;
 import io.com.spring_mvc.common.commInterface.CreateGroup;
 import io.com.spring_mvc.common.commInterface.UpdateGroup;
 import jakarta.validation.constraints.NotBlank;
@@ -33,6 +35,7 @@ public class UserDTO {
     private String phone;
 
     @NotBlank(message = "角色不能为空", groups = CreateGroup.class)
+    @EnumValue(enumClass = RoleEnum.class, message = "角色不合法")
     private String role;      // USER / DOCTOR / MERCHANT
 
     private Integer status;// 1-启用，0-禁用
